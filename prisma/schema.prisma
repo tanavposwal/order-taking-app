@@ -19,24 +19,23 @@ model Restro {
 }
 
 model Table {
-  id String @id @default(uuid())
-
-  cart Dish[]
-
-  Restro   Restro? @relation(fields: [restroId], references: [id], onDelete: Cascade)
-  restroId String?
+  id       String  @id @default(uuid())
+  name     String? @default("abc")
+  cart     Dish[]
+  Restro   Restro @relation(fields: [restroId], references: [id], onDelete: Cascade)
+  restroId String
 }
 
 model Dish {
-  id       String  @id @default(uuid())
+  id       String @id @default(uuid())
   name     String
   image    String
   price    Int
   restroId String
-  
-  Restro   Restro  @relation(fields: [restroId], references: [id], onDelete: Cascade)
-  Table    Table?  @relation(fields: [tableId], references: [id], onDelete: NoAction)
-  tableId  String?
+
+  Restro  Restro  @relation(fields: [restroId], references: [id], onDelete: Cascade)
+  Table   Table?  @relation(fields: [tableId], references: [id], onDelete: NoAction)
+  tableId String?
 }
 
 model User {

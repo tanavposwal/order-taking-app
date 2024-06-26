@@ -9,7 +9,7 @@ export default async function RootLayout({
   const session = await getServerAuthSession();
 
   if (session) {
-    return (<main className="text-black h-screen max-w-screen-md mx-auto">{children}</main>);
+    return (<main className="text-black max-w-screen-md mx-auto">{children}</main>);
   } else {
     return (
       <main className="flex flex-col items-center justify-center bg-gradient-to-b from-[#346d02] to-[#15162c] text-white">
