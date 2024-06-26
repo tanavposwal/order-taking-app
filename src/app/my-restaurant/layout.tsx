@@ -12,7 +12,7 @@ export default async function RootLayout({
     return (<main className="text-black h-screen max-w-screen-md mx-auto">{children}</main>);
   } else {
     return (
-      <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#346d02] to-[#15162c] text-white">
+      <main className="flex flex-col items-center justify-center bg-gradient-to-b from-[#346d02] to-[#15162c] text-white">
         <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
           <div className="my-3 flex flex-col gap-2 text-center">
             <h1 className="text-5xl font-extrabold tracking-tight sm:text-[5rem]">

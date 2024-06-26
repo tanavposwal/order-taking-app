@@ -13,7 +13,7 @@ model Restro {
   logo      String?
   location  String?
   managerId String  @unique
-  manager   User    @relation(fields: [managerId], references: [id])
+  manager   User    @relation(fields: [managerId], references: [id], onDelete: Cascade)
   menu      Dish[]
   tables    Table[]
 }
@@ -23,7 +23,7 @@ model Table {
 
   cart Dish[]
 
-  Restro   Restro? @relation(fields: [restroId], references: [id])
+  Restro   Restro? @relation(fields: [restroId], references: [id], onDelete: Cascade)
   restroId String?
 }
 
@@ -34,8 +34,8 @@ model Dish {
   price    Int
   restroId String
   
-  Restro   Restro  @relation(fields: [restroId], references: [id])
-  Table    Table?  @relation(fields: [tableId], references: [id])
+  Restro   Restro  @relation(fields: [restroId], references: [id], onDelete: Cascade)
+  Table    Table?  @relation(fields: [tableId], references: [id], onDelete: NoAction)
   tableId  String?
 }
 

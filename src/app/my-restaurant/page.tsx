@@ -21,7 +21,10 @@ export default async function Home() {
           <h2 className="text-4xl font-bold">{user.restro.name}</h2>
           <h1 className="text-xl">Your Restaurant</h1>
           <p className="mb-2">@ {user.restro.location}</p>
-          <Link className="text-md bg-neutral-100 px-4 py-2 hover:bg-neutral-200 rounded-lg" href="/my-restaurant/edit">Edit</Link>
+          <Link className="text-md bg-neutral-100 px-4 py-2 hover:bg-neutral-200 rounded-lg" href="/my-restaurant/edit">Edit Menu</Link>
+          <div className="grid">
+
+          </div>
         </div>
       ) : (
         <div>
